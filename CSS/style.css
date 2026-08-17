@@ -4,13 +4,13 @@ body{
 h1 {
     color: aliceblue;
     text-align: center;
-    font-size: large;
+    font-size: larger;
     font-family: 'Times New Roman', Times, serif
     
 }
 p{
     color: fuchsia;
     text-align: center;
-    font-size: small;
+    font-size: larger;
     font-family: 'Times New Roman', Times, serif
 }

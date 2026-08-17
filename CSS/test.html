@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Demo</title>
+    
+    <style>
+        /* =========================================
+           1. BASIC SELECTORS
+           ========================================= */
+        /* Universal: Selects everything to change the font */
+        * {
+            font-family:  comic sans ms, sans-serif;
+        }
+        
+        /* Type: Selects all standard paragraphs */
+        p {
+            line-height: 1.5 ;
+        }
+        
+        /* Class: Selects elements with class="button" */
+        .button {
+            background-color: #007bff;
+            color: rgb(248, 246, 246);
+            padding: 5px 10px;
+            display: inline-block;
+        }
+        
+        /* ID: Selects the single element with id="header" */
+        #header {
+            text-decoration: underline;
+            color: darkcyan;
+        }
+
+        /* Grouping: Applies to both h1 and h2 */
+        h1, h2 {
+            margin-bottom: 5px;
+        }
+
+        /* =========================================
+           2. COMBINATORS
+           ========================================= */
+        /* Descendant: Any <p> inside a <div class="container"> */
+        .container p {
+            border-left: 3px solid gray;
+            padding-left: 10px;
+        }
+
+        /* Child: Only <li> elements that are direct children of <ul> */
+        ul > li {
+            list-style-type: square;
+        }
+
+        /* Adjacent Sibling: The first <p> immediately following an <h2> */
+        h2 + p {
+            font-weight: bold;
+            color: darkred;
+        }
+
+        /* General Sibling: Any <p> following an <h2> on the same level */
+        h2 ~ p {
+            font-style: italic;
+        }
+
+        /* =========================================
+           3. ATTRIBUTE SELECTORS
+           ========================================= */
+        /* Has Attribute: Any input with the 'disabled' attribute */
+        input[disabled] {
+            background-color: #ffcccc;
+            cursor: not-allowed;
+        }
+
+        /* Exact Match: Only inputs where type is exactly "text" */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 5px;
+        }
+
+        /* Begins With: Links starting with "https" */
+        a[href^="https"] {
+            color: green;
+        }
+
+        /* Ends With: Links ending in ".pdf" */
+        a[href$=".pdf"] {
+            color: red;
+        }
+
+        /* =========================================
+           4. PSEUDO-CLASSES
+           ========================================= */
+        /* :hover - When mouse is over the element */
+        .button:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+
+        /* :focus - When clicking inside an input */
+        input:focus {
+            outline: 3px solid orange;
+        }
+
+        /* :nth-child(even) - Striped list items */
+        .zebra-list li:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+
+        /* :first-child and :last-child */
+        .zebra-list li:first-child {
+            color: purple;
+            font-weight: bold;
+        }
+        .zebra-list li:last-child {
+            border-bottom: 2px solid black;
+        }
+
+        /* :not(x) - Selects paragraphs that DO NOT have the class "intro" */
+        p:not(.intro) {
+            color: #444;
+        }
+
+        /* =========================================
+           5. PSEUDO-ELEMENTS
+           ========================================= */
+        /* ::before and ::after - Injecting content */
+        h1::before {
+            content: "🚀 "; 
+        }
+        h1::after {
+            content: " 🚀";
+        }
+
+        /* ::first-line - Styles the first rendered line of text */
+        .intro::first-line {
+            font-variant: small-caps;
+            font-size: 1.2em;
+        }
+
+        /* ::selection - Changes highlight color when user drags cursor over text */
+        ::selection {
+            background-color: black;
+            color: limegreen;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Basic Selectors Demo -->
+    <h1>welcome to selectors example demo</h1>
+    <h2 id="header">Basic Selectors & Combinators</h2>
+    
+    <p class="intro">This paragraph has the class "intro". Try selecting text on this page to see the ::selection pseudo-element in action!</p>
+    
+    <!-- 2. Combinators Demo -->
+    <p>This paragraph is an adjacent sibling to the H2 above it.</p>
+    <p>This paragraph is a general sibling to the H2 above it.</p>
+
+    <div class="container">
+        <p>This is a descendant paragraph inside a container div.</p>
+    </div>
+
+    <!-- 3. Attributes Demo -->
+    <h2>Attribute Selectors</h2>
+    <form>
+        <input type="text" placeholder="Type here to see :focus...">
+        <input type="text" disabled value="I am disabled">
+    </form>
+    <br>
+    <a href="https://google.com">Secure Link (Starts with https)</a> | 
+    <a href="document.pdf">Download File (Ends with .pdf)</a>
+
+    <!-- 4. Pseudo-Classes Demo -->
+    <h2>Pseudo-Classes (Lists)</h2>
+    <div class="button">Hover over me!</div>
+
+    <ul class="zebra-list">
+        <li>Item 1 (First Child)</li>
+        <li>Item 2 (Even nth-child)</li>
+        <li>Item 3</li>
+        <li>Item 4 (Even nth-child)</li>
+        <li>Item 5 (Last Child)</li>
+    </ul>
+
+</body>
+</html>

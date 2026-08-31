@@ -1,0 +1,55 @@
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+p {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.rut {
+    background-color: lightblue;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.rut1 {
+    background-color: lightgreen;
+    color: black;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+#head {
+    color: crimson;
+    border-bottom: 2px solid crimson;
+}
+
+#footer {
+    color: darkgoldenrod;
+    border-top: 2px solid darkgoldenrod;
+}
+
+h3, h4, h5 {
+    color: purple;
+    font-style: italic;
+}
+
+div p {
+    color: darkgreen;
+    font-weight: bold;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

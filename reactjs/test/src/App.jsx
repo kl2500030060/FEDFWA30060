@@ -1,3 +1,8 @@
+import {Student} from './student.jsx';
+import {Home} from './home.jsx';
+import {About} from './about.jsx';
+import {Contact} from './contact.jsx';
+import {Name} from './name.jsx';
 export default App;
 
 function App() { 
@@ -14,42 +19,7 @@ function App() {
       <About/>
       <Contact/>
       <Student name={sname} age={sage} marks={smarks}/>
+      <h1 style={{ color: 'green' }}>state demo</h1>
     </div> 
   ) 
 } 
-
-function Home() { 
-  return( 
-    <h2>my homepage</h2> 
-  ) 
-} 
-
-function About() { 
-  return( 
-    <h2>my about page</h2> 
-  ) 
-} 
-
-function Contact() { 
-  return( 
-    <h2>my contact page</h2> 
-  ) 
-}
-
-function Name() {
-  return(
-    <h2>2500030060 RSK</h2>
-  )
-}
-
-function Student(props) {
-  return(
-    <>
-    <h1>PROPS DEMO</h1>
-    <h2 style={{ color: 'turquoise' }}>student profile</h2>
-    <p>Name: {props.name}</p>
-    <p>Age: {props.age}</p>
-    <p>Marks: {props.marks}</p>
-    </>
-  )
-}

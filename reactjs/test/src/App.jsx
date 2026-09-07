@@ -1,6 +1,9 @@
 export default App;
 
 function App() { 
+  let sname = "KR";
+  let sage = "20";
+  let smarks = "90";
   return( 
     <div> 
       <h1 style={{ color: 'red' }}>welcome to react js</h1> 
@@ -10,6 +13,7 @@ function App() {
       <Home/> 
       <About/>
       <Contact/>
+      <Student name={sname} age={sage} marks={smarks}/>
     </div> 
   ) 
 } 
@@ -35,5 +39,17 @@ function Contact() {
 function Name() {
   return(
     <h2>2500030060 RSK</h2>
+  )
+}
+
+function Student(props) {
+  return(
+    <>
+    <h1>PROPS DEMO</h1>
+    <h2 style={{ color: 'turquoise' }}>student profile</h2>
+    <p>Name: {props.name}</p>
+    <p>Age: {props.age}</p>
+    <p>Marks: {props.marks}</p>
+    </>
   )
 }
